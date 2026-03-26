@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "react-router-dom": "^7.13.2"
+  }
+  
+  "name": "frontend",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "...",
+    "react-dom": "..."
+  },
+  "devDependencies": {
+    "vite": "...",
+    "typescript": "...",
+    "@types/react": "...",
+    "@types/react-dom": "..."
+  }
+}
