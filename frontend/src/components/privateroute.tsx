@@ -6,11 +6,8 @@ interface PrivateRouteProps {
 
 export default function PrivateRoute({ children }: PrivateRouteProps) {
   const token = localStorage.getItem("token");
-
-  // Se não houver token, redireciona para login
   if (!token) {
     return <Navigate to="/login" replace />;
   }
-
   return children;
 }
