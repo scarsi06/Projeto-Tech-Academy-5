@@ -6,6 +6,7 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   function validarCPF(cpf: string) {
     cpf = cpf.replace(/[^\d]+/g, "");
@@ -54,9 +55,17 @@ export default function Register() {
         body: JSON.stringify({ cpf, email, password }),
       });
 
-      if (!response.ok) throw new Error("Erro ao registrar");
+      if (!response.ok) {
+        throw new Error("Erro ao registrar");
+      }
+
+      const data = await response.json();
+      console.log("Resposta do backend:", data);
 
       alert("Cadastro realizado com sucesso!");
+
+      // 👉 redireciona para login
+      navigate("/login");
     } catch (err: any) {
       alert("Erro: " + err.message);
     }
